@@ -1,0 +1,11 @@
+<div class='page-header'>  
+    <h1>Hola, ya estás dentro y autorizao!</h1>
+    <p>Abajo muestro la info del currentUser: email y profileImageURL.</p>
+</div>
+<div class='panel panel-default'>  
+    <div class='panel-heading'>{{session.currentUser.email}} ID: {{session.currentUser.id}}</div>
+    <div class='panel-body'>
+        <img src='{{session.currentUser.profileImageURL}}' />
+    </div>
+</div> 
+{{outlet}}

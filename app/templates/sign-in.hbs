@@ -1,0 +1,21 @@
+<div class='page-header'>  
+    <h1>Login</h1>
+</div>  
+<div class='jumbotron'>  
+
+{{input type='text' class='form-control' value=email placeholder='...@...'}}
+{{input type='password' class='form-control' value=password placeholder='******'}}
+
+{{#if session.isWorking}}
+    <button class='btn btn-default' disabled='disabled'>
+        Validando...
+    </button>
+{{else}}
+    <button class='btn btn-default' {{action 'signIn' 'password'}}>
+        Login
+    </button>
+{{/if}}
+
+</div>  
+
+{{outlet}}

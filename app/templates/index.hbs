@@ -1,0 +1,21 @@
+
+{{#if session.isAuthenticated}}
+	<div class='page-header'>  
+	    <h1>De momento sólo estás autorizao a salir</h1>
+	</div>  
+	<div class='jumbotron'>
+	<p>Pero mola saber que esto sólo lo lees si estás autenticado de verdá como usuario registrado.</p>
+	</div>  
+ {{else}}
+	<div class='page-header'>  
+	    <h1>Lógate o regístrate pa poder votar</h1>
+	</div>  
+	<div class='list-group'>  
+	    {{#link-to 'sign-up' class='list-group-item'}}
+	        Regístrate
+	    {{/link-to}}
+	    {{#link-to 'sign-in' class='list-group-item'}}
+	        Login
+	    {{/link-to}}
+	</div>
+{{/if}}

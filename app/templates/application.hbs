@@ -1,0 +1,26 @@
+<div class='container'>
+    <div class='navbar-brand'>
+	    {{#link-to 'index' class='list-group-item'}}
+	        Ember Firebase login / sing in
+	    {{/link-to}}
+    </div>
+    <div class='navbar-right'>
+        {{#if session.isAuthenticated}}
+            <button
+                class='btn btn-default navbar-btn'
+                {{action 'signOut'}}
+            >{{session.currentUser.email}} Sign Out
+            </button>
+         {{else}}
+		    {{#link-to 'sign-in' class='list-group-item'}}
+		        Login
+		    {{/link-to}}
+		    {{#link-to 'sign-up' class='list-group-item'}}
+		        Regístrate
+		    {{/link-to}}
+        {{/if}}
+    </div>
+</div>
+<div class='container'>  
+    {{outlet}}
+</div>  

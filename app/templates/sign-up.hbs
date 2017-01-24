@@ -1,0 +1,11 @@
+<div class='page-header'>  
+    <h1>Registro de usuario con email y password</h1>
+</div>  
+
+<div class='jumbotron'>  
+	{{input type='text' class='form-control' value=email placeholder='...@...'}}
+	{{input type='password' class='form-control' value=password placeholder='******'}}
+	<button class='btn btn-default' {{action 'signUp'}}>Registrarse</button> 
+</div>  
+
+{{outlet}}
