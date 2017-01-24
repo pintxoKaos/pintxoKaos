@@ -1,11 +1,11 @@
-<div class='page-header'>  
+<div class='page-header'>
     <h1>Registro de usuario con email y password</h1>
-</div>  
+</div>
 
-<div class='jumbotron'>  
+<div class='jumbotron'>
 	{{input type='text' class='form-control' value=email placeholder='...@...'}}
 	{{input type='password' class='form-control' value=password placeholder='******'}}
-	<button class='btn btn-default' {{action 'signUp'}}>Registrarse</button> 
-</div>  
+	<button class='btn btn-default' {{action 'createUser' 'email' 'password'}}>Registrarse</button> 
+</div>
 
 {{outlet}}
