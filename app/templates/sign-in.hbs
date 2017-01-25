@@ -12,8 +12,22 @@
     </button>
 {{else}}
     <button class='btn btn-default' {{action 'signIn' 'password'}}>
-        Login
+    	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+    	<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
     </button>
+    <button class='btn btn-default' {{action 'googleSignIn'}}>
+    	<span class="glyphicon glyphicon-log-in" aria-hidden="true"> google</span>
+    </button>
+    <button class='btn btn-default' {{action 'googleSignIn'}}>
+    	<span class="glyphicon glyphicon-log-in" aria-hidden="true"> facebook</span>
+    </button>
+    <button class='btn btn-default' {{action 'googleSignIn'}}>
+    	<span class="glyphicon glyphicon-log-in" aria-hidden="true"> twiter</span>
+    </button>
+    <button class='btn btn-default' {{action 'googleSignIn'}}>
+    	<span class="glyphicon glyphicon-log-in" aria-hidden="true"> github</span>
+    </button>
+
 {{/if}}
 
 {{#if errorMessage}}

@@ -23,10 +23,12 @@ export default Ember.Controller.extend({
 					console.log(userResponse);
 					const user = this.store.createRecord('user', {
 						uid: userResponse.uid,
-						alias: userResponse.alias,
-						email: userResponse.email
+						displayName: userResponse.displayName,
+						email: userResponse.email,
+						emailVerified: userResponse.emailVerified
 					});
-					//this.transitionToRoute('welcome');
+
+					controller.set('errorMessage', "Se ha enviado un correo de confirmación.");
 
 					this.get('session').open('firebase', {
 						provider: 'password',
@@ -39,6 +41,7 @@ export default Ember.Controller.extend({
 					}, (error) => {
 						controller.set('errorMessage', error);
 					});
+					this.transitionToRoute('welcome');
 
 					return user.save();
 				},

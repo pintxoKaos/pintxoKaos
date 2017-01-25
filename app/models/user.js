@@ -1,7 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  alias: DS.attr(),
-  uid: DS.attr(),
-  email: DS.attr()
+	displayName: DS.attr('string'),
+	uid: DS.attr('string'),
+	email: DS.attr('email'),
+	emailVerified: DS.attr('boolean')
+
 });

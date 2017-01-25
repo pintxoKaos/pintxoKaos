@@ -1,12 +1,15 @@
 <div class='page-header'>
-    <h1>Registro de usuario con email y password</h1>
+    <h1>Registro</h1>
 </div>
 
 <div class='jumbotron'>
-	{{input type='text' class='form-control' value=name placeholder='nick'}}
 	{{input type='text' class='form-control' value=email placeholder='...@...'}}
 	{{input type='password' class='form-control' value=password placeholder='******'}}
-	<button class='btn btn-default' {{action 'createUser'}}>Registrarse</button> 
+
+    <button class='btn btn-default' {{action 'createUser' 'password'}}>
+    	<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+    	<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+    </button>
 
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>
