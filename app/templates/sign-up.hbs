@@ -3,9 +3,15 @@
 </div>
 
 <div class='jumbotron'>
+	{{input type='text' class='form-control' value=name placeholder='nick'}}
 	{{input type='text' class='form-control' value=email placeholder='...@...'}}
 	{{input type='password' class='form-control' value=password placeholder='******'}}
 	<button class='btn btn-default' {{action 'createUser'}}>Registrarse</button> 
+
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+
 </div>
 
 {{outlet}}

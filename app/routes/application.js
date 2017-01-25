@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	beforeModel() {
 			this.get('session').fetch().catch((error) => {
-				console.log(error);
+				//console.log(error);
 			});
 		},
 
@@ -12,6 +12,5 @@ export default Ember.Route.extend({
 				this.transitionTo('/');
 			},
 		},
-
 
 });

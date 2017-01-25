@@ -8,39 +8,49 @@ export default Ember.Controller.extend({
 
 	password: null,
 
+	errorMessage: null,
+
 	actions: {
 
 		createUser() {
-				const auth = this.get('firebaseApp').auth();
-				auth.createUserWithEmailAndPassword(
-					this.get('email'),
-					this.get('password')).
-				then((userResponse) => {
+			let controller = this;
+			controller.set('errorMessage', "Registrando...");
+			const auth = this.get('firebaseApp').auth();
+			auth.createUserWithEmailAndPassword(
+				this.get('email'),
+				this.get('password')).
+			then((userResponse) => {
 					console.log(userResponse);
 					const user = this.store.createRecord('user', {
 						uid: userResponse.uid,
-						alias: userResponse.email,
+						alias: userResponse.alias,
 						email: userResponse.email
 					});
+					//this.transitionToRoute('welcome');
+
+					this.get('session').open('firebase', {
+						provider: 'password',
+						email: this.get('email') || '',
+						password: this.get('password') || '',
+					}).then(() => {
+						controller.set('email', null);
+						controller.set('password', null);
+						controller.transitionToRoute('welcome');
+					}, (error) => {
+						controller.set('errorMessage', error);
+					});
+
 					return user.save();
-				});
-			},
-			/*
-						signUp2() {
-							let controller = this;
-							this.get('firebaseApp').createUser({
-								email: this.get('email') || '',
-								password: this.get('password') || '',
-							}, (error, data) => {
-								if (error) {
-									console.log(error);
-								} else {
-									controller.set('email', null);
-									controller.set('password', null);
-									controller.transitionToRoute('sign-in');
-								}
-							});
-						}
-			*/
+				},
+				function(error) {
+					if (error) {
+						controller.set('errorMessage', error);
+						controller.set('email', null);
+						controller.set('password', null);
+					}
+				}
+
+			);
+		}
 	}
 });

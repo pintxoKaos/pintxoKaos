@@ -8,10 +8,10 @@ module.exports = function(environment) {
 		locationType: 'auto',
 
 		firebase: {
-			apiKey: '',
-			authDomain: '',
-			databaseURL: '',
-			storageBucket: '',
+			apiKey: "",
+			authDomain: "",
+			databaseURL: "",
+			storageBucket: "",
 			messagingSenderId: ""
 		},
 
