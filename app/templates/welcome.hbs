@@ -14,8 +14,18 @@
     </div>
 </div> 
 {{else}}
-    <p>Te hemos enviado un correo de confirmación que ya veremos cómo confirmas.</p>
-    <p>Si no lo has recibido (puede tardar unos minutos) vamos a poner un botón para que te lo vuelva a enviar.</p>
-    <p>Mientras, si quieres, puedes ir rellenando lo que te falta. Los campos obligatorios (*) son necesarios para poder votar.</p>
+    {{#if confirmEmail}}
+    	<p>Ya lo hemos enviado (recuerda que puede tardar unos minutos) no ponerse nervioso.</p>
+	{{else}}
+	    <p>Te hemos enviado un correo de confirmación que ya veremos cómo confirmas.</p>
+    	<p>Si no lo has recibido (puede tardar unos minutos) <span class="btn btn-default"{{action 'sendEmailVerification'}}>dale aquí</span> para que te lo vuelva a enviar.</p>
+    {{/if}}
+    <p>Mientras, si quieres, puedes ir rellenando lo que te falta, porque los campos obligatorios (*) son necesarios para poder votar.</p>
+    {{!la validación de email viene de https://moldingfest-cfd7a.firebaseapp.com/welcome?mode=<action>&oobCode=<code>}}
 {{/if}}
+
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+
 {{outlet}}

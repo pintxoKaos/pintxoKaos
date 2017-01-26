@@ -23,9 +23,12 @@ export default Ember.Controller.extend({
 					console.log(userResponse);
 					const user = this.store.createRecord('user', {
 						uid: userResponse.uid,
-						displayName: userResponse.displayName,
 						email: userResponse.email,
-						emailVerified: userResponse.emailVerified
+						emailVerified: userResponse.emailVerified,
+						status: 'PENDING',
+						isAdmin: false,
+						isActive: true
+
 					});
 
 					controller.set('errorMessage', "Se ha enviado un correo de confirmación.");
@@ -42,7 +45,13 @@ export default Ember.Controller.extend({
 						controller.set('errorMessage', error);
 					});
 					this.transitionToRoute('welcome');
-
+					auth.onAuthStateChanged(function(user) {
+						if (user.emailVerified) {
+							console.log('Email is verified');
+						} else {
+							console.log('Email is not verified');
+						}
+					});
 					return user.save();
 				},
 				function(error) {
