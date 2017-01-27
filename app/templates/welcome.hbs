@@ -1,4 +1,6 @@
-{{#if user.displayName}}
+{{#if session.currentUser.photoURL}}
+	<img class="avatar" src='{{session.currentUser.photoURL}}' />
+{{else if session.currentUser.displayName}}
     <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{displayName}}</h1>
 {{else}}
     <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{session.currentUser.email}}</h1>
@@ -9,7 +11,11 @@
 <div class='panel panel-default'>
     <div class='panel-heading'>{{session.currentUser.email}} ID: {{session.currentUser.uid}}</div>
     <div class='panel-body'>
-        <img src='{{session.currentUser.profileImageURL}}' />
+    <button class='btn btn-default' {{action 'basicUpdateUser'}} title="actualiza tu perfil">
+    	<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+    </button>
+
+        <img src='{{session.currentUser.photoURL}}' />
     </div>
 </div>
 {{else}}

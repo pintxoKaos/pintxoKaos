@@ -41,7 +41,14 @@
 			<ul class="nav navbar-nav navbar-right">
 		        {{#if session.isAuthenticated}}
 				    <li>{{#link-to 'welcome'}}
-				        {{session.currentUser.email}}
+{{#if session.currentUser.displayName}}
+ {{session.currentUser.displayName}}
+{{else}}
+ {{session.currentUser.email}}
+{{/if}}
+{{#if session.currentUser.photoURL}}
+<img class="avatar" src='{{session.currentUser.photoURL}}' />
+{{/if}}
 				    {{/link-to}}</li>
 
 <li><a {{action 'signOut'}}><span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span></a></li>

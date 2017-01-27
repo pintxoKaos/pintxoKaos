@@ -1,14 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	user: null,
+
+	firebaseApp: Ember.inject.service(),
+
 	beforeModel() {
 		if (this.get('session')) {
 			this.get('session').fetch('password').catch((error) => {
 				this.set('errorMessage', error);
 			});
-			this.set('user', this.get('session').currentUser);
-			//console.log(this.get('user'));
+			console.log(this.get('firebaseApp').auth().currentUser);
+		}
+	},
+	afterModel() {
+		if (this.get('session')) {
+			console.log(this.get('firebaseApp').auth().currentUser);
 		}
 	}
 });
