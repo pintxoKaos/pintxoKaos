@@ -9,6 +9,8 @@ export default Ember.Controller.extend({
 	actions: {
 		signIn(provider) {
 				let controller = this;
+				const auth = this.get('firebaseApp').auth();
+
 				this.get('session').open('firebase', {
 					provider: provider,
 					email: this.get('email') || '',
@@ -17,8 +19,17 @@ export default Ember.Controller.extend({
 					controller.set('email', null);
 					controller.set('password', null);
 					controller.transitionToRoute('welcome');
+
+					auth.onAuthStateChanged(function(user) {
+						if (user.emailVerified) {
+							controller.set('errorMessage', "El email está validado");
+						} else {
+							controller.set('errorMessage', "El email NO está validado");
+						}
+					});
+
 				}, (error) => {
-					console.log(error);
+					controller.set('errorMessage', error);
 				});
 			},
 

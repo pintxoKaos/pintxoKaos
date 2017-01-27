@@ -1,18 +1,17 @@
-<div class='page-header'>
 {{#if session.currentUser.displayName}}
-    <h1>Configura tu cuenta {{displayName}}</h1>
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{displayName}}</h1>
 {{else}}
-    <h1>Configura tu cuenta {{session.currentUser.email}}</h1>
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{session.currentUser.email}}</h1>
 {{/if}}
-</div>
+<div class='well'>
 {{#if session.currentUser.isValidEmail}}
 <p>Abajo muestro la info del currentUser: email y profileImageURL.</p>
-<div class='panel panel-default'>  
+<div class='panel panel-default'>
     <div class='panel-heading'>{{session.currentUser.email}} ID: {{session.currentUser.uid}}</div>
     <div class='panel-body'>
         <img src='{{session.currentUser.profileImageURL}}' />
     </div>
-</div> 
+</div>
 {{else}}
     {{#if confirmEmail}}
     	<p>Ya lo hemos enviado (recuerda que puede tardar unos minutos) no ponerse nervioso.</p>
@@ -27,5 +26,6 @@
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>
     {{/if}}
+  </div>
 
 {{outlet}}
