@@ -15,13 +15,14 @@ export default Ember.Controller.extend({
 					provider: provider,
 					email: this.get('email') || '',
 					password: this.get('password') || '',
-				}).then(() => {
+				}).then((user) => {
 					controller.set('email', null);
 					controller.set('password', null);
 					controller.transitionToRoute('welcome');
-
-					auth.onAuthStateChanged(function(user) {
-						if (user.emailVerified) {
+					//console.log(user.currentUser);
+					let currentUser = user.currentUser;
+					auth.onAuthStateChanged(function(currentUser) {
+						if (currentUser.emailVerified) {
 							controller.set('errorMessage', "El email está validado");
 						} else {
 							controller.set('errorMessage', "El email NO está validado");

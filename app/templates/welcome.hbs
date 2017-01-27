@@ -1,11 +1,11 @@
-{{#if session.currentUser.displayName}}
+{{#if user.displayName}}
     <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{displayName}}</h1>
 {{else}}
     <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{session.currentUser.email}}</h1>
 {{/if}}
 <div class='well'>
-{{#if session.currentUser.isValidEmail}}
-<p>Abajo muestro la info del currentUser: email y profileImageURL.</p>
+{{#if session.currentUser.emailVerified}}
+<p>Aquí puedes configurar tu cuenta</p>
 <div class='panel panel-default'>
     <div class='panel-heading'>{{session.currentUser.email}} ID: {{session.currentUser.uid}}</div>
     <div class='panel-body'>
