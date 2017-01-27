@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
 
 	confirmEmail: false,
 
+	nick: null,
+
+	photoURL: null,
+
 	actions: {
 		sendEmailVerification() {
 				let controller = this;
@@ -21,8 +25,8 @@ export default Ember.Controller.extend({
 				controller.set('errorMessage', "Actualizando...");
 				const auth = this.get('firebaseApp').auth();
 				auth.currentUser.updateProfile({
-					displayName: "fores jar",
-					photoURL: "https://lh6.googleusercontent.com/-wJesWg7UKEM/AAAAAAAAAAI/AAAAAAAAAd8/vlXlVp5pt2w/photo.jpg?sz=64"
+					displayName: controller.get('nick') || auth.currentUser.displayName,
+					photoURL: controller.get('photoURL') || auth.currentUser.photoURL
 				}).then(function() {
 					controller.set('errorMessage', "Perfil actualizado");
 				}, function(error) {

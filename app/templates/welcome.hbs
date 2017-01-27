@@ -1,21 +1,71 @@
-{{#if session.currentUser.photoURL}}
-	<img class="avatar" src='{{session.currentUser.photoURL}}' />
-{{else if session.currentUser.displayName}}
-    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{displayName}}</h1>
-{{else}}
-    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{session.currentUser.email}}</h1>
-{{/if}}
 <div class='well'>
 {{#if session.currentUser.emailVerified}}
 <p>Aquí puedes configurar tu cuenta</p>
 <div class='panel panel-default'>
-    <div class='panel-heading'>{{session.currentUser.email}} ID: {{session.currentUser.uid}}</div>
+    <div class='panel-heading'>Básicos de tu ID: {{session.currentUser.uid}}</div>
     <div class='panel-body'>
-    <button class='btn btn-default' {{action 'basicUpdateUser'}} title="actualiza tu perfil">
-    	<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-    </button>
 
-        <img src='{{session.currentUser.photoURL}}' />
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
+    <div class="col-sm-8">
+	    {{input value=nick class="form-control" placeholder=session.currentUser.displayName}}
+    </div>
+    <div class="col-sm-2">
+	<button class='btn btn-default' {{action 'basicUpdateUser'}} title="actualiza tu perfil">
+		<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+	</button>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></label>
+    <div class="col-sm-8">
+      <p class="form-control-static">{{session.currentUser.email}}</p>
+    </div>
+    <div class="col-sm-2">
+	<!--button class='btn btn-default' {{action 'basicUpdateUser'}} title="actualiza tu perfil">
+		<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+	</button-->
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+    <div class="col-sm-8">
+      <p class="form-control-static">******</p>
+    </div>
+    <div class="col-sm-2">
+	<!--button class='btn btn-default' {{action 'basicUpdateUser'}} title="actualiza tu perfil">
+		<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+	</button-->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputPhoto" class="col-sm-2 control-label">
+{{#if session.currentUser.photoURL}}
+	<img class="avatar" src='{{session.currentUser.photoURL}}' />
+{{else}}
+	<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+{{/if}}
+    </label>
+    <div class="col-sm-8">
+	    {{input value=photoURL class="form-control" placeholder=session.currentUser.photoURL}}
+    </div>
+    <div class="col-sm-2">
+	<button class='btn btn-default' {{action 'basicUpdateUser'}} title="actualiza tu perfil">
+		<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+	</button>
+    </div>
+  </div>
+
+</form>
+
+
+
+
+
+
     </div>
 </div>
 {{else}}

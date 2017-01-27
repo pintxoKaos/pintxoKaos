@@ -22,10 +22,12 @@ export default Ember.Controller.extend({
 					//console.log(user.currentUser);
 					let currentUser = user.currentUser;
 					auth.onAuthStateChanged(function(currentUser) {
-						if (currentUser.emailVerified) {
-							controller.set('errorMessage', "El email está validado");
-						} else {
-							controller.set('errorMessage', "El email NO está validado");
+						if (currentUser) {
+							if (currentUser.emailVerified) {
+								controller.set('errorMessage', "El email está validado");
+							} else {
+								controller.set('errorMessage', "El email NO está validado");
+							}
 						}
 					});
 
@@ -60,15 +62,25 @@ export default Ember.Controller.extend({
 
 			googleSignIn() {
 				let controller = this;
-				this.get('session').open('firebase', {
-					provider: 'GoogleAuthProvider'
-				}).then(() => {
-					controller.set('email', null);
-					controller.set('password', null);
-					controller.transitionToRoute('welcome');
-				}, (error) => {
-					console.log(error);
+				const auth = this.get('firebaseApp').auth();
+				let provider = this.get('firebaseApp').auth().GoogleAuthProvider();
+				auth.signInWithPopup(provider).then(function(result) {
+					// This gives you a Google Access Token. You can use it to access the Google API.
+					var token = result.credential.accessToken;
+					// The signed-in user info.
+					var user = result.user;
+					// ...
+				}).catch(function(error) {
+					// Handle Errors here.
+					var errorCode = error.code;
+					var errorMessage = error.message;
+					// The email of the user's account used.
+					var email = error.email;
+					// The firebase.auth.AuthCredential type that was used.
+					var credential = error.credential;
+					controller.set('errorMessage', error);
 				});
+
 			}
 
 	}
