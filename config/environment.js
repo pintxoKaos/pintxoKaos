@@ -7,17 +7,27 @@ module.exports = function(environment) {
 		rootURL: '/',
 		locationType: 'auto',
 
-		firebase: {
-			apiKey: "",
-			authDomain: "",
-			databaseURL: "",
-			storageBucket: "",
-			messagingSenderId: ""
+		i18n: {
+			defaultLocale: 'es',
+			alowedLocales: ['es', 'en', 'fr', 'pt']
 		},
+
+		moment: {
+			outputFormat: 'LL',
+			allowEmpty: true, // default: false
+			defaultFormat: 'DD.MM.YYYY',
+			defaultLocale: 'es',
+			includeLocales: ['es', 'en', 'fr', 'pt'],
+			includeTimezone: 'all'
+		},
+
+		firebase: {},
 
 		// if using ember-cli-content-security-policy
 		contentSecurityPolicy: {
-			'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"
+			'script-src': "'self' 'unsafe-eval' apis.google.com",
+			'frame-src': "'self' https://*.firebaseapp.com",
+			'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com https://auth.firebase.com wss://*.firebaseio.com"
 		},
 		baseUrl: '/',
 		torii: {
