@@ -1,16 +1,15 @@
+<h1>{{moment-format (now) 'LLLL'}}</h1>
 
 {{#if session.isAuthenticated}}
-	<div class='page-header'>  
-	    <h1>De momento sólo estás autorizao a salir</h1>
-	</div>  
+
 	<div class='jumbotron'>
+	<p>De momento sólo estás autorizao a salir</p>
 	<p>Pero mola saber que esto sólo lo lees si estás autenticado de verdá como usuario registrado.</p>
+	<p>Llevas aquí desde {{moment-from-now (now) interval=1000}}</p>
 	</div>  
  {{else}}
-	<div class='page-header'>  
-	    <h1>Hooola, estás en {{t 'appName'}}</h1>
-	</div>  
 	<div class='jumbotron'>
+    <p>Hooola, estás en {{t 'appName'}}</p>
 	<p>Como no estás logado estás viendo lo que ve tol mundo</p>
 	<p>Llevas aquí desde {{moment-from-now (now) interval=1000}}</p>
 	</div> 
