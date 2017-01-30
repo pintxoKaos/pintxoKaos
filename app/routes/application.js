@@ -12,7 +12,7 @@ export default Ember.Route.extend({
 			});
 		}
 		this.get('moment').setLocale('es');
-		this.get('moment').setTimeZone('Spain/Madrid');
+		this.get('moment').setTimeZone('Europe/Madrid');
 	},
 
 	actions: {
