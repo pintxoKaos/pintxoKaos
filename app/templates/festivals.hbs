@@ -1,0 +1,54 @@
+ <h1>{{t 'festivals'}} {{#if 'isAdding'}}+{{else}}?{{/if}}</h1>
+
+ <table class="table table-bordered table-striped">
+   <thead>
+     <tr>
+       <th>Name<br><small {{action 'addFestival' festival}} class="small not-bold">(Click on name for editing)</small></th>
+       <th>info</th>
+     </tr>
+   </thead>
+   <tbody>
+    {{#if 'isAdding'}}
+      
+       <tr>
+         <td>
+         NUEVO
+         </td>
+         <td>
+         NUEVO
+         </td>
+       </tr>
+      
+    {{/if}}
+
+     {{#each model as |festival|}}
+       <tr>
+         <td>
+        {{#if festival.isEditing}}
+          <form {{action 'saveFestival' festival on='submit'}} class="form-inline">
+            <div class="input-group">
+              {{input value=festival.name class="form-control"}}
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-success" disabled={{festival.isNotValid}}>Save</button>
+                <button class="btn btn-danger" {{action 'cancelFestivalEdit' author}}>Cancel</button>
+              </div>
+            </div>
+          </form>
+        {{else}}
+          <span {{action 'editFestival' festival}}>{{festival.name}}</span>
+        {{/if}}
+         </td>
+         <td>
+           <ul>
+             {{#each festival.country as |country|}}
+               <li>{{country.name}}</li>
+               <li>{{country.city}}</li>
+               <li>{{country.code}}</li>
+             {{/each}}
+           </ul>
+         </td>
+       </tr>
+     {{/each}}
+   </tbody>
+ </table>
+ {{outlet}}
