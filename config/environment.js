@@ -17,11 +17,12 @@ module.exports = function(environment) {
 			allowEmpty: true, // default: false
 			defaultFormat: 'DD.MM.YYYY',
 			defaultLocale: 'es',
-			includeLocales: ['es', 'en', 'fr', 'pt'],
+			includeLocales: true,
 			includeTimezone: 'all'
 		},
 
-		firebase: {},
+		firebase: {
+		},
 
 		// if using ember-cli-content-security-policy
 		contentSecurityPolicy: {

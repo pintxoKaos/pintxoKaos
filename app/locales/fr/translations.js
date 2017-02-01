@@ -1,7 +1,16 @@
 export default {
-  "appName": "molding-fest",
-  "app": "molding-fest",
-  "festivals": "festivals",
-  "artists": "artistes",
+  "appName": "chaos Brochette",
+  "nextEditionIn": "La prochaine édition commence",
+  "app": "chaosBrochetteApp",
+  "teams": "équipes",
   "localeFlag": "http://www.ember-power-select.com/flags/fr.svg",
+  "gracias":"Merci, très sympathique",
+  "siCond": "si",
+  "endCond":"vous lisez ceci et vous n'êtes pas encore inscrit, vous pouvez rendre le processus compliqué pour vous",
+  "hiAreIn": "Boooonjour, vous êtes sur le web",
+  "askHelp":"Demandez l'aide de quelqu'un qui entend",
+  "register1":"Dans ce numéro, vous devez vous inscrire avec un email et mot de passe",
+  "register2":"Vous pouvez le faire à partir d'ici",
+  "register3":"Comme vous le faites, nous vous ferons parvenir un lien vers cette adresse pour vous de valider l'e-mail"
+
 };

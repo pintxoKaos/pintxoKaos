@@ -4,19 +4,24 @@ export default Ember.Controller.extend({
 	languages: [{
 		name: 'ES',
 		code: 'es',
-		flagUrl: 'http://www.ember-power-select.com/flags/es.svg'
+		flagUrl: 'http://www.sciencekids.co.nz/images/pictures/flags680/Spain.jpg'
 	}, {
 		name: 'UK',
 		code: 'en',
-		flagUrl: 'http://www.ember-power-select.com/flags/gb.svg'
+		flagUrl: 'http://www.sciencekids.co.nz/images/pictures/flags680/United_Kingdom.jpg'
 	}, {
 		name: 'FR',
 		code: 'fr',
-		flagUrl: 'http://www.ember-power-select.com/flags/fr.svg'
+		flagUrl: 'http://www.sciencekids.co.nz/images/pictures/flags680/France.jpg'
 	}, {
 		name: 'PT',
 		code: 'pt',
-		flagUrl: 'http://www.ember-power-select.com/flags/pt.svg'
+		flagUrl: 'http://www.sciencekids.co.nz/images/pictures/flags680/Portugal.jpg'
+	}, {
+		name: 'CT',
+		code: 'zh',
+		flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Estelada_blava.svg/255px-Estelada_blava.svg.png'
+		/*flagUrl: 'http://www.sciencekids.co.nz/images/pictures/flags680/China.jpg'*/
 	}],
 
 	selectedLanguage: Ember.computed('languages', 'locale',
