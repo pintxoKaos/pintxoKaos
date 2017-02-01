@@ -1,9 +1,13 @@
-
+html {
+  //background-color: darkred;
+}
 body {
-  font-family: verdana;
-  background:radial-gradient(ellipse closest-side, white, lightgreen 5%, black 30%, white);
+  font-family: fantasy;
+  color: white;
+  background-color: darkred;
+  background:radial-gradient(ellipse closest-side, white, lightgreen 5%, black 30%, black 60%, darkgrey);
   background-repeat:no-repeat;
-  background-position: calc(100% + 240px) calc(100% + 150px);
+//  background-position: calc(100% + 240px) calc(100% + 150px);
   background-attachment: fixed;
 }
 
@@ -16,4 +20,12 @@ body {
     display: inline-block;
     height: 20px;
     width: 20px;
+}
+.well {
+  font-family: verdana;
+  background-color: rgba(0, 139, 139, 0.4);
+}
+.jumbotron {
+  font-family: verdana;
+  background-color: rgba(0, 139, 139, 0.4);
 }
