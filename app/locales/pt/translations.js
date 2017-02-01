@@ -10,7 +10,7 @@ export default {
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
   "appName": "caos espeto",
-  "nextEditionIn": "A próxima edição começa",
+  "nextEditionIn": "Edição atual...",
   "app": "caosEspetoApp",
   "teams": "equipes",
   "localeFlag": "http://www.ember-power-select.com/flags/pt.svg",

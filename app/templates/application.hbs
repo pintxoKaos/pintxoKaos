@@ -23,19 +23,24 @@
     <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
 
 			<ul class="nav navbar-nav">
-<!--
-				{{#each menuLinks as |link|}}
+				<li>
+					{{#link-to 'editions'}}
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+					{{/link-to}}
+				</li>
+				<li>
+					{{#link-to 'editions'}}
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+					{{/link-to}}
+				</li>
+				<li>
+					{{#link-to 'editions'}}
+						<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+					{{/link-to}}
+				</li>
 
-					<li>
-						{{link-to (t link.label) link.url}}
-					</li>
 
-				{{/each}}
-
-        <li>
-        	<a target="_blank" href="http://moldingfest.com/">blog</a>
-        </li>
--->
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
@@ -63,10 +68,12 @@
 
 
 
-
+<!--
 {{#if session.currentUser}}
 				<li>{{#link-to 'festivals'}}<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>{{/link-to}}</li>
 {{/if}}
+-->
+
 				<li class="dropdown {{if dropdownOpen 'open'}}">
 					<a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" {{action 'toggleDropdown'}}><img src="{{t 'localeFlag'}}" class="icon-flag carret"></a>
 					<ul class="dropdown-menu">

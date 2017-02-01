@@ -1,11 +1,20 @@
 html {
   //background-color: darkred;
 }
+.navbar
+{
+  background-color: rgba(0, 139, 139, 0.4);
+    border: none;
+    border-bottom: 1px solid silver;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+}
+
 body {
   font-family: fantasy;
   color: white;
   background-color: darkred;
-  background:radial-gradient(ellipse closest-side, white, lightgreen 5%, black 30%, black 60%, darkgrey);
+  background:radial-gradient(ellipse closest-side, white, lightgreen 5%, black 30%, black 60%, darkgreen);
   background-repeat:no-repeat;
 //  background-position: calc(100% + 240px) calc(100% + 150px);
   background-attachment: fixed;
@@ -28,4 +37,18 @@ body {
 .jumbotron {
   font-family: verdana;
   background-color: rgba(0, 139, 139, 0.4);
+}
+
+input[type=text],
+input[type=password],
+ input[type=email]
+{
+  color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed silver;
+//    width: 275px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
 }

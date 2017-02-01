@@ -9,7 +9,7 @@ export default {
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   "appName": "穗 混乱",
-  "nextEditionIn": "下一版开始",
+  "nextEditionIn": "当前版本...",
   "app": "穗混乱应用",
   "teams": "球队",
   //"localeFlag": "http://www.ember-power-select.com/flags/ru.svg",

@@ -1,6 +1,6 @@
 export default {
   "appName": "chaos Spike",
-  "nextEditionIn": "The next edition starts",
+  "nextEditionIn": "Current edition...",
   "app": "chaosSpikeApp",
   "teams": "teams",
   "localeFlag": "http://www.ember-power-select.com/flags/gb.svg",

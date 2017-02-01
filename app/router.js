@@ -10,7 +10,9 @@ Router.map(function() {
   this.route('sign-up');
   this.route('sign-in');
   this.authenticatedRoute('welcome');
-  this.route('festivals');
+  this.authenticatedRoute('editions');
+  this.route('teams');
+  this.route('pintxos');
 });
 
 export default Router;

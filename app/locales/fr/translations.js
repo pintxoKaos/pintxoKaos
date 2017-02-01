@@ -1,6 +1,6 @@
 export default {
   "appName": "chaos Brochette",
-  "nextEditionIn": "La prochaine édition commence",
+  "nextEditionIn": "Édition actuelle...",
   "app": "chaosBrochetteApp",
   "teams": "équipes",
   "localeFlag": "http://www.ember-power-select.com/flags/fr.svg",

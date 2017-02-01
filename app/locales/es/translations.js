@@ -1,6 +1,6 @@
 export default {
 	"appName": "pintxo Kaos",
-	"nextEditionIn": "La siguiente edición empieza",
+	"nextEditionIn": "Edición actual...",
   "app": "pintxoKaosApp",
   "teams": "equipos",
 	"localeFlag": "http://www.ember-power-select.com/flags/es.svg",
