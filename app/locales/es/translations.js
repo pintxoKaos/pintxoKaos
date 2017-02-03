@@ -3,7 +3,7 @@ export default {
 	"nextEditionIn": "Edición actual...",
   "app": "pintxoKaosApp",
   "teams": "equipos",
-	"localeFlag": "http://www.ember-power-select.com/flags/es.svg",
+	"localeFlag": "../../assets/images/Spain.jpg",
 	"gracias":"Gracias, muy amable",
 	"siCond": "Si",
 	"endCond":"que estás leyendo esto y aún no te has registrado, puede que el proceso sea complicado para ti",

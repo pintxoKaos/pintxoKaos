@@ -13,7 +13,7 @@ export default {
   "nextEditionIn": "Edição atual...",
   "app": "caosEspetoApp",
   "teams": "equipes",
-  "localeFlag": "http://www.ember-power-select.com/flags/pt.svg",
+  "localeFlag": "/assets/images/Portugal.jpg",
   "gracias": "Muito agradável, graças",
   "siCond": "se",
   "endCond":"você está lendo isso e você ainda não se inscreveu, você pode tornar o processo complicado para você",

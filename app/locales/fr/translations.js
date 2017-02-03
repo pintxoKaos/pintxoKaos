@@ -3,7 +3,7 @@ export default {
   "nextEditionIn": "Édition actuelle...",
   "app": "chaosBrochetteApp",
   "teams": "équipes",
-  "localeFlag": "http://www.ember-power-select.com/flags/fr.svg",
+  "localeFlag": "/assets/images/France.jpg",
   "gracias":"Merci, très sympathique",
   "siCond": "si",
   "endCond":"vous lisez ceci et vous n'êtes pas encore inscrit, vous pouvez rendre le processus compliqué pour vous",

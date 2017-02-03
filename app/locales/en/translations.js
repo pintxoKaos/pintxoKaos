@@ -3,7 +3,7 @@ export default {
   "nextEditionIn": "Current edition...",
   "app": "chaosSpikeApp",
   "teams": "teams",
-  "localeFlag": "http://www.ember-power-select.com/flags/gb.svg",
+  "localeFlag": "/assets/images/United_Kingdom.jpg",
   "gracias":"Thank you, very kind",
   "siCond":"If you have been reading this",
   "endCond":"and you have not yet registered, the process may be complicated for you",

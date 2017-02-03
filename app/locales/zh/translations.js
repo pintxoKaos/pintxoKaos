@@ -13,7 +13,7 @@ export default {
   "app": "穗混乱应用",
   "teams": "球队",
   //"localeFlag": "http://www.ember-power-select.com/flags/ru.svg",
-  "localeFlag": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Estelada_blava.svg/255px-Estelada_blava.svg.png",
+  "localeFlag": "/assets/images/Estelada_blava.svg.png",
   "gracias": "谢谢你，非常友好",
   "siCond": "如果",
   "endCond":"你正在读这篇文章，你还没有注册，就可以使工艺复杂的你",
