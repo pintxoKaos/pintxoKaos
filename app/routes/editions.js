@@ -4,7 +4,10 @@ export default Ember.Route.extend({
   firebaseApp: Ember.inject.service(),
 
 	beforeModel() {
-/*
+/*	if (!this.get('session').isAuthenticated) {
+        this.transitionTo('sign-in');
+		}
+
 		if (this.get('session')) {
 			this.get('session').fetch('password').catch((error) => {
 				this.set('errorMessage', error);

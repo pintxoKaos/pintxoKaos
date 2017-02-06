@@ -13,11 +13,9 @@
  {{else}}
 	<div class='well'>
   <p>{{t 'hiAreIn'}} {{t 'appName'}}</p>
-	<p>{{t 'register1'}}.
-		<button class='btn btn-success' {{action 'createUser' 'password'}}>
-			{{t 'register2'}} <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-    </button>
-		. {{t 'register3'}}. </p>
+	<p>{{t 'register1'}}. 
+	{{t 'register2'}} <span class="glyphicon glyphicon-off" aria-hidden="true"></span>.</p>
+	<p>{{t 'register3'}}. </p>
 	<p>{{t 'siCond'}} {{moment-from-now (now) interval=1000}} {{t 'endCond'}}. {{t 'askHelp'}}.</p>
 	<p>{{t 'gracias'}}</p>
 	</div>
