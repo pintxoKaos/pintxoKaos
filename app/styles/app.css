@@ -5,12 +5,21 @@ html {
 img {width: 100%;height: 200px;padding-bottom: 100px}
 .navbar
 {
+  background-color: transparent;
+//    border: none;
+//    border-bottom: 1px solid silver;
+    outline: none;
+    padding: 10px 10px 10px 10px;
+}
+.navbar
+{
 //  background-color: rgba(0, 139, 139, 0.4);
 //    border: none;
 //    border-bottom: 1px solid silver;
 //    outline: none;
 //    padding: 0px 0px 0px 0px;
 }
+/*
 .navbar-default .navbar-brand {
     color: rgba(255, 255, 255, 1);
 }
@@ -52,7 +61,7 @@ img {width: 100%;height: 200px;padding-bottom: 100px}
     background-color: #67cf59;
 }
 
-
+*/
 body {
   font-family: fantasy;
   color: white;

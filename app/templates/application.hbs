@@ -1,3 +1,4 @@
+    <img id="background" alt="background" src="/assets/images/bg4.jpg"/>
 
 <nav class="navbar navbar-default">
 
@@ -23,6 +24,11 @@
     <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
 
 			<ul class="nav navbar-nav">
+				<li>
+					{{#link-to 'index'}}
+			<span class="glyphicon glyphicon-tint" {{action 'quellueva'}} aria-hidden="true"></span>
+					{{/link-to}}
+				</li>
 				<li>
 					{{#link-to 'editions'}}
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
@@ -89,7 +95,6 @@
 	</div>
 </nav>
 
-    <img class="" id="background" alt="background" src="/assets/images/bg4.jpg"/>
 
 <div class='container'>
     {{outlet}}
