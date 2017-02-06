@@ -1,6 +1,6 @@
-    <img class="rain" id="background" alt="" />
+    <img class="rain" id="background" src="assets/images/bg4.jpg" />
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" {{action 'quellueva'}}>
 
 	<div class="container-fluid">
 
@@ -19,34 +19,32 @@
 	    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 	    {{/link-to}}
 
+
+
 		</div>
+
+
+
 
     <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
 
 			<ul class="nav navbar-nav">
-				<li>
-					{{#link-to 'index'}}
-			<span class="glyphicon glyphicon-tint" {{action 'quellueva'}} aria-hidden="true"></span>
-					{{/link-to}}
-				</li>
 				<li>
 					{{#link-to 'editions'}}
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 					{{/link-to}}
 				</li>
 				<li>
-					{{#link-to 'editions'}}
+					{{#link-to 'teams'}}
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 						<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
 					{{/link-to}}
 				</li>
 				<li>
-					{{#link-to 'editions'}}
+					{{#link-to 'pintxos'}}
 						<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
 					{{/link-to}}
 				</li>
-
-
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
@@ -62,7 +60,6 @@
 {{/if}}
 				    {{/link-to}}</li>
 
-<li><a {{action 'signOut'}}><span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span></a></li>
 		         {{else}}
 				    <li>{{#link-to 'sign-in'}}
 				        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
@@ -72,13 +69,6 @@
 				    {{/link-to}}</li>
 		        {{/if}}
 
-
-
-<!--
-{{#if session.currentUser}}
-				<li>{{#link-to 'festivals'}}<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>{{/link-to}}</li>
-{{/if}}
--->
 
 				<li class="dropdown {{if dropdownOpen 'open'}}">
 					<a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" {{action 'toggleDropdown'}}><img src="{{t 'localeFlag'}}" class="icon-flag carret"></a>
@@ -91,8 +81,14 @@
 
 			</ul>
 
+
+
+
+
 	    </div>
+
 	</div>
+
 </nav>
 
 

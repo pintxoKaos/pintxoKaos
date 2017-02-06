@@ -11,6 +11,15 @@ export default {
   "askHelp":"Demandez l'aide de quelqu'un qui entend",
   "register1":"Dans ce numéro, vous devez vous inscrire avec un email et mot de passe",
   "register2":"Vous pouvez le faire à partir d'ici",
-  "register3":"Comme vous le faites, nous vous ferons parvenir un lien vers cette adresse pour vous de valider l'e-mail"
-
+  "register3":"Comme vous le faites, nous vous ferons parvenir un lien vers cette adresse pour vous de valider l'e-mail",
+	"profileSettings":"Vous pouvez configurer votre compte",
+	"mailSent":"Nous avons déjà envoyé (rappelez-vous que cela peut prendre quelques minutes) ne pas être nerveux",
+	"mailSending":"Nous avons envoyé un e-mail de confirmation. Vous devez ouvrir le lien.",
+	"ifNotMail":"Si vous ne recevez pas (cela peut prendre quelques minutes)",
+	"clickHere":"dale ici",
+	"resendMail":"pour l'obtenir renvoyez",
+	"chooseTeam":"Vous devrez associer votre utilisateur à certains équipements disponibles (ou créer) à partir du bouton",
+	"choosePintxo":"Vous, ou quelqu'un de votre équipe, vous devez associer un pintxo l'équipe à partir du bouton",
+	"openVoteIn":"Lorsque vous avez tous ceux qui ont permis à bouton de vote",
+	"construction":"Pas encore disponible",
 };

@@ -5,10 +5,10 @@
 
 {{#if session.isAuthenticated}}
 
-	<div class='jumbotron'>
-	<p>De momento sólo estás autorizao a salir</p>
-	<p>Pero mola saber que esto sólo lo lees si estás autenticado de verdá como usuario registrado.</p>
-	<p>Llevas aquí desde {{moment-from-now (now) interval=1000}}</p>
+	<div class='well'>
+	<p>{{t 'chooseTeam'}} <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></p>
+	<p>{{t 'choosePintxo'}} <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></p>
+	<p>{{t 'openVoteIn'}} {{moment-from-now nextEditionEnds interval=1000 }}</p>
 	</div>
  {{else}}
 	<div class='well'>

@@ -11,6 +11,15 @@ export default {
 	"askHelp":"Pide ayuda a alguien que se entere",
 	"register1":"En esta edición hay que registrarse con un correo electrónico y una clave",
   "register2":"Puedes hacerlo desde aquí",
-  "register3":"En cuanto lo hagas, te enviaremos un enlace a esa dirección para que valides el correo"
-
+  "register3":"En cuanto lo hagas, te enviaremos un enlace a esa dirección para que valides el correo",
+	"profileSettings":"Aquí puedes configurar tu cuenta",
+	"mailSent":"Ya lo hemos enviado (recuerda que puede tardar unos minutos) no ponerse nervioso",
+	"mailSending":"Te hemos enviado un correo de confirmación. Debes acceder al enlace.",
+	"ifNotMail":"Si no lo has recibido (puede tardar unos minutos)",
+	"clickHere":"dale aquí",
+	"resendMail":"para que te lo vuelva a enviar",
+	"chooseTeam":"Tendrás que asociar tu usuario a algún equipo disponible (o crearlo) desde el botón",
+	"choosePintxo":"Tú, o alguien de tu equipo, tendrá que asociar un pintxo al equipo desde el botón",
+	"openVoteIn":"Cuando tengas todo eso tendrás habilitado el botón de voto",
+	"construction":"No disponible todavía",
 };

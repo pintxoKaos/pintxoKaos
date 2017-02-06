@@ -1,10 +1,12 @@
+<h1 {{action 'signOut'}}><span class="glyphicon glyphicon-log-out" aria-hidden="true" title="logout"></span></h1>
 <div class='well'>
 {{#if session.currentUser.emailVerified}}
-<p>Aquí puedes configurar tu cuenta</p>
-<div class='panel panel-default'>
-    <div class='panel-heading'>Básicos de tu ID: {{session.currentUser.uid}}</div>
-    <div class='panel-body'>
-
+<p>{{t 'profileSettings'}}</p>
+	<!--button class='btn btn-default' {{action 'signOut'}} title="logout">
+		<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+	</button-->
+<p>ID: {{session.currentUser.uid}}</p>
+<div class='well'>
 
 <form class="form-horizontal">
   <div class="form-group">
@@ -62,21 +64,17 @@
 </form>
 
 
-
-
-
-
-    </div>
 </div>
+
+
 {{else}}
     {{#if confirmEmail}}
-    	<p>Ya lo hemos enviado (recuerda que puede tardar unos minutos) no ponerse nervioso.</p>
+    	<p>{{t 'mailSent'}}.</p>
 	{{else}}
-	    <p>Te hemos enviado un correo de confirmación que ya veremos cómo confirmas.</p>
-    	<p>Si no lo has recibido (puede tardar unos minutos) <span class="btn btn-default"{{action 'sendEmailVerification'}}>dale aquí</span> para que te lo vuelva a enviar.</p>
+	    <p>{{t 'mailSending'}}</p>
+    	<p>{{t 'ifNotMail'}} <span class="btn btn-default"{{action 'sendEmailVerification'}}>{{t 'clickHere'}}</span> {{t 'resendMail'}}.</p>
     {{/if}}
-    <p>Mientras, si quieres, puedes ir rellenando lo que te falta, porque los campos obligatorios (*) son necesarios para poder votar.</p>
-    {{!la validación de email viene de https://moldingfest-cfd7a.firebaseapp.com/welcome?mode=<action>&oobCode=<code>}}
+    <!--p>Mientras, si quieres, puedes ir rellenando lo que te falta, porque los campos obligatorios (*) son necesarios para poder votar.</p-->
 {{/if}}
 
     {{#if errorMessage}}

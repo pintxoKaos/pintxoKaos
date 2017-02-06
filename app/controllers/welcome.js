@@ -32,6 +32,10 @@ export default Ember.Controller.extend({
 				}, function(error) {
 					controller.set('errorMessage', error);
 				});
+			},
+			signOut() {
+				this.get('session').close();
+				this.transitionToRoute('/');
 			}
-	}
+		}
 });

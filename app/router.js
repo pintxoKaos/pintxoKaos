@@ -11,8 +11,8 @@ Router.map(function() {
   this.route('sign-in');
   this.authenticatedRoute('welcome');
   this.authenticatedRoute('editions');
-  this.route('teams');
-  this.route('pintxos');
+  this.authenticatedRoute('teams');
+  this.authenticatedRoute('pintxos');
 });
 
 export default Router;
