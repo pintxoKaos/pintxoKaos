@@ -45,7 +45,7 @@ export default Ember.Controller.extend({
 			], 50);
 		};
 		image.crossOrigin = 'anonymous';
-		image.src = '/assets/images/bg4.jpg';
+		image.src = '/assets/images/bg.jpg';
 	},
 
 
@@ -86,7 +86,7 @@ export default Ember.Controller.extend({
 				], 50);
 			};
 			image.crossOrigin = 'anonymous';
-			image.src = '/assets/images/bg4.jpg';
+			image.src = '/assets/images/bg.jpg';
 		},
 
 		changeLocale(param) {
