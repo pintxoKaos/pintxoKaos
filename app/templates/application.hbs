@@ -39,17 +39,17 @@
 	    <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
 
 			<ul class="nav navbar-nav">
-				<!--li>
-					{{#link-to 'editions'}}
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-					{{/link-to}}
-				</li-->
 				<li>
 				{{#link-to 'index'}}
 					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 				{{/link-to}}
 				</li>
 {{#if session.isAuthenticated}}
+				<li>
+				{{#link-to 'editions'}}
+					<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+				{{/link-to}}
+				</li>
 				<li>
 				{{#link-to 'teams'}}
 					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>

@@ -68,7 +68,7 @@ body {
   font-family: fantasy;
   color: white;
   background-color: darkred;
-  background:radial-gradient(at left,lightgreen 5%, black 30%, black 60%, darkgreen);
+  background:radial-gradient(ellipse at left,grey 2%, black 30%, black 90%, darkgrey);
   background-repeat:no-repeat;
 //  background-position: calc(100% + 240px) calc(100% + 150px);
   background-attachment: fixed;
