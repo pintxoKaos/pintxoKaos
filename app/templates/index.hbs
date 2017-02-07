@@ -1,20 +1,20 @@
-<h1>{{t 'appName'}}</h1>
+<h3>{{t 'appName'}}. 
 
 <!--h4>{{moment-format nextEdition 'LLLL'}}</h4-->
-<h3>{{t 'nextEditionIn'}} {{moment-from-now nextEdition interval=1000 }}</h3>
+{{t 'nextEditionIn'}} {{moment-from-now nextEdition interval=1000 }}</h3>
 
 {{#if session.isAuthenticated}}
 
 	<div class='well'>
-	<p>{{t 'chooseTeam'}} <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></p>
-	<p>{{t 'choosePintxo'}} <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></p>
+	<p>{{t 'chooseTeam'}} {{#link-to 'teams' class='btn btn-default'}}<span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-flag" aria-hidden="true"></span>{{/link-to}}</p>
+	<p>{{t 'choosePintxo'}} {{#link-to 'pintxos' class='btn btn-default'}}<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>{{/link-to}}</p>
 	<p>{{t 'openVoteIn'}} {{moment-from-now nextEditionEnds interval=1000 }}</p>
 	</div>
  {{else}}
 	<div class='well'>
   <p>{{t 'hiAreIn'}} {{t 'appName'}}</p>
 	<p>{{t 'register1'}}. 
-	{{t 'register2'}} <span class="glyphicon glyphicon-off" aria-hidden="true"></span>.</p>
+	{{#link-to 'sign-up' class='btn btn-default'}}{{t 'register2'}} <span class="glyphicon glyphicon-off" aria-hidden="true"></span>{{/link-to}}</p>
 	<p>{{t 'register3'}}. </p>
 	<p>{{t 'siCond'}} {{moment-from-now (now) interval=1000}} {{t 'endCond'}}. {{t 'askHelp'}}.</p>
 	<p>{{t 'gracias'}}</p>

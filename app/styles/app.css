@@ -5,22 +5,19 @@ html {
     background-color: transparent;
     color:white;
 }
-.rain {width:100%;height: 100px; opacity: 0.3}
-.navbar
+.rain {width:100%;height: 100px; opacity: 0.8}
+.dropdown-menu
 {
-//  background-color: transparent;
-//    border: none;
-//    border-bottom: 1px solid silver;
-//    outline: none;
+    color:white;
+    background-color: rgba(255, 255, 255, 0.3);
+    //border: none;
+    //border-bottom: 1px solid silver;
+    outline: none;
 //    padding: 10px 10px 10px 10px;
 }
-.navbar
+.language
 {
-//  background-color: rgba(0, 139, 139, 0.4);
-//    border: none;
-//    border-bottom: 1px solid silver;
-//    outline: none;
-//    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 15px 15px;
 }
 
 .navbar-default .navbar-brand {
@@ -29,6 +26,8 @@ html {
 .navbar-default {
     font-size: 17px;
     background-color: transparent;
+    border: none;
+//    border-bottom: 1px solid black;
 //    background: -webkit-linear-gradient(top, rgba(27, 133, 83, 1) 0%, rgba(103, 207, 89, 0.73) 100%);
 //    background: linear-gradient(to bottom, rgba(27, 133, 83, 1) 0%, rgba(103, 207, 89, 0.73) 100%);
     border-width: 1px;
@@ -69,7 +68,7 @@ body {
   font-family: fantasy;
   color: white;
   background-color: darkred;
-  background:radial-gradient(ellipse closest-side, yellow 1%, lightgreen 5%, black 30%, black 60%, darkgreen);
+  background:radial-gradient(at left,lightgreen 5%, black 30%, black 60%, darkgreen);
   background-repeat:no-repeat;
 //  background-position: calc(100% + 240px) calc(100% + 150px);
   background-attachment: fixed;

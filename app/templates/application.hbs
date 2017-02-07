@@ -1,4 +1,4 @@
-    <img class="rain" id="background" src="assets/images/bg4.jpg" />
+<img class="rain" id="background" src="assets/images/bg4.jpg" />
 
 <nav class="navbar navbar-default" {{action 'quellueva'}}>
 
@@ -19,14 +19,24 @@
 	    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 	    {{/link-to}}
 -->
+			<ul class="nav navbar-nav language">
+				<li class="dropdown {{if dropdownOpen 'open'}}">
+					<a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" {{action 'toggleDropdown'}}><img src="{{t 'localeFlag'}}" class="icon-flag carret"></a>
+					<ul class="dropdown-menu">
+{{#each languages as |language|}}
+<li>
+	<a href="#" {{action 'changeLocale' language.code}} name="{{language.code}}"><img src="{{language.flagUrl}}" class="icon-flag"> {{language.name}}</a>
+</li>
+{{/each}}
+					</ul>
+				</li>
+			</ul>
 
 
 		</div>
 
 
-
-
-    <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
+	    <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
 
 			<ul class="nav navbar-nav">
 				<!--li>
@@ -35,62 +45,49 @@
 					{{/link-to}}
 				</li-->
 				<li>
-	    {{#link-to 'index'}}
-	    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-	    {{/link-to}}
+				{{#link-to 'index'}}
+					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+				{{/link-to}}
 				</li>
-
+{{#if session.isAuthenticated}}
 				<li>
-					{{#link-to 'teams'}}
-						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-					{{/link-to}}
+				{{#link-to 'teams'}}
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+				{{/link-to}}
 				</li>
 				<li>
-					{{#link-to 'pintxos'}}
-						<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
-					{{/link-to}}
+				{{#link-to 'pintxos'}}
+					<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+				{{/link-to}}
 				</li>
+{{/if}}
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-		        {{#if session.isAuthenticated}}
-				    <li>{{#link-to 'welcome'}}
+{{#if session.isAuthenticated}}
+				<li>
+					{{#link-to 'welcome'}}
 {{#if session.currentUser.photoURL}}
-<img class="avatar" src='{{session.currentUser.photoURL}}' />
+						<img class="avatar" src='{{session.currentUser.photoURL}}' />
 {{/if}}
 {{#if session.currentUser.displayName}}
- {{session.currentUser.displayName}} 
+						{{session.currentUser.displayName}} 
 {{else}}
- {{session.currentUser.email}} 
+						{{session.currentUser.email}} 
 {{/if}}
 
-				    {{/link-to}}</li>
-
-		         {{else}}
-				    <li>{{#link-to 'sign-in'}}
-				        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-				    {{/link-to}}</li>
-				    <li>{{#link-to 'sign-up'}}
-				        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-				    {{/link-to}}</li>
-		        {{/if}}
-
-
-				<li class="dropdown {{if dropdownOpen 'open'}}">
-					<a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" {{action 'toggleDropdown'}}><img src="{{t 'localeFlag'}}" class="icon-flag carret"></a>
-					<ul class="dropdown-menu">
-				{{#each languages as |language|}}
-<li><a href="#" {{action 'changeLocale' language.code}} name="{{language.code}}"><img src="{{language.flagUrl}}" class="icon-flag"> {{language.name}}</a></li>
-				{{/each}}
-					</ul>
+				    {{/link-to}}
 				</li>
+{{else}}
+				<li>
+					{{#link-to 'sign-in'}}
+						<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+					{{/link-to}}
+				</li>
+{{/if}}
 
 			</ul>
-
-
-
-
 
 	    </div>
 

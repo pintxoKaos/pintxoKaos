@@ -1,20 +1,32 @@
-<h1><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></h1>
-
+<h1>
+{{#if session.isWorking}}
+    <button class='btn btn-default' disabled='disabled'>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+    </button>
+{{else}}
+    <button class='btn btn-default' {{action 'signIn' 'password'}} title="login">
+        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+    </button>
+    <button class='btn btn-default' {{action 'sendPasswordReset'}} title="reset password">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"> ****</span>
+    </button>
+{{/if}}
+</h1>
 <div class='jumbotron'>  
 
 {{input type='text' class='form-control' value=email placeholder='...@...'}}
 {{input type='password' class='form-control' value=password placeholder='******'}}
 
 {{#if session.isWorking}}
-    <button class='btn btn-default' disabled='disabled'>
+    <!--button class='btn btn-default' disabled='disabled'>
         Validando...
-    </button>
+    </button-->
 {{else}}
-    <button class='btn btn-default' {{action 'signIn' 'password'}} title="login">
+    <!--button class='btn btn-default' {{action 'signIn' 'password'}} title="login">
     	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
     	<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
     </button>
-    <!--button class='btn btn-default' {{action 'googleSignIn'}}>
+    <button class='btn btn-default' {{action 'googleSignIn'}}>
     	<span class="glyphicon glyphicon-log-in" aria-hidden="true"> google</span>
     </button>
     <button class='btn btn-default' {{action 'googleSignIn'}}>
@@ -26,13 +38,6 @@
     <button class='btn btn-default' {{action 'googleSignIn'}}>
     	<span class="glyphicon glyphicon-log-in" aria-hidden="true"> github</span>
     </button-->
-    <button class='btn btn-default' {{action 'sendPasswordReset'}} title="reset password">
-        <span class="glyphicon glyphicon-cog" aria-hidden="true"> ****</span>
-    </button>
-
-
-
-
 {{/if}}
 
 {{#if errorMessage}}

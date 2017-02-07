@@ -1,4 +1,8 @@
-<h1 {{action 'signOut'}}><span class="glyphicon glyphicon-log-out" aria-hidden="true" title="logout"></span></h1>
+<h1>
+<button class='btn btn-default' {{action 'signOut'}} title="logout">
+  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+</button>
+</h1>
 <div class='well'>
 {{#if session.currentUser.emailVerified}}
 <p>{{t 'profileSettings'}}</p>

@@ -9,7 +9,7 @@ module.exports = function(environment) {
 
 		i18n: {
 			defaultLocale: 'es',
-			alowedLocales: ['es', 'en', 'fr', 'pt']
+			alowedLocales: ['es', 'en', 'fr', 'pt', 'zh']
 		},
 
 		moment: {
