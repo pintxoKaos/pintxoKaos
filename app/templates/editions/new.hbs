@@ -1,27 +1,30 @@
-<h2>Add a new local Library</h2>
+<!--h2>Add a new local Library</h2-->
 
 <div class="form-horizontal">
   <div class="form-group">
-    <label class="col-sm-2 control-label">Name</label>
+    <label class="col-sm-2 control-label">Nombre</label>
     <div class="col-sm-10">
-      {{input type="text" value=model.name class="form-control" placeholder="The name of the Library"}}
+      {{input type="text" value=model.name class="form-control" placeholder="The name of the Edition"}}
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-2 control-label">Address</label>
+    <label class="col-sm-2 control-label">Fecha</label>
     <div class="col-sm-10">
-      {{input type="text" value=model.address class="form-control" placeholder="The address of the Library"}}
+      {{input type="date" value=model.fecha class="form-control" placeholder="Date of the edition"}}
     </div>
   </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Phone</label>
-    <div class="col-sm-10">
-      {{input type="text" value=model.phone class="form-control" placeholder="The phone number of the Library"}}
+  <!--div class="form-group">
+    <label class="col-sm-2 control-label">Horario</label>
+    <div class="col-sm-5">
+      {{input type="time" value=model.initTime class="form-control" placeholder="Starts"}}
     </div>
-  </div>
+    <div class="col-sm-5">
+      {{input type="time" value=model.endTime class="form-control" placeholder="Ends"}}
+    </div>
+  </div-->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" {{action 'saveLibrary' model}}>Add to library list</button>
+      <button type="submit" class="btn btn-default" {{action 'saveEdition' model}}><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
     </div>
   </div>
 </div>

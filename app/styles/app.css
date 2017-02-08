@@ -94,6 +94,8 @@ body {
 }
 
 input[type=text],
+input[type=date],
+input[type=time],
 input[type=password],
  input[type=email]
 {
