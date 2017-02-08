@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
 					controller.transitionToRoute('welcome');
 					//console.log(user.currentUser);
 					const currentUser = user.currentUser;
-					console.log(currentUser);
+					//console.log(currentUser);
 					auth.onAuthStateChanged(function(currentUser) {
 						if (currentUser) {
 							if (currentUser.emailVerified) {

@@ -9,12 +9,12 @@ export default Ember.Route.extend({
 			this.get('session').fetch('password').catch((error) => {
 				this.set('errorMessage', error);
 			});
-			console.log(this.get('firebaseApp').auth().currentUser);
+			//console.log(this.get('firebaseApp').auth().currentUser);
 		}
 	},
 	afterModel() {
 		if (this.get('session')) {
-			console.log(this.get('firebaseApp').auth().currentUser);
+			//console.log(this.get('firebaseApp').auth().currentUser);
 		}
 	}
 });

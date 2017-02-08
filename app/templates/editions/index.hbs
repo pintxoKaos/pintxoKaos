@@ -1,11 +1,7 @@
-
+<div class="well">
+  <ul>
 {{#each model as |edition|}}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{edition.name}}</h3>
-    </div>
-    <div class="panel-body">
-      <p>Date: {{edition.date}}</p>
-    </div>
-  </div>
+    <li>{{edition.name}} -> {{edition.fecha}}</li>
 {{/each}}
+  </ul>
+</div>

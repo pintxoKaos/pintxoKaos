@@ -9,6 +9,11 @@ export default Ember.Route.extend({
   actions: {
 
     saveEdition(newEdition) {
+      let modelo = newEdition.get('data');
+
+      //console.log(modelo.get('fecha'));
+      //console.log(modelo.get('name'));
+      console.log(newEdition.get('data'));
       newEdition.save().then(() => this.transitionTo('editions'));
     },
 
