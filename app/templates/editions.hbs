@@ -3,11 +3,8 @@
 
 
 
-<div class="well">
-  <ul class="nav nav-pills">
-    {{#link-to 'editions.index' tagName="li"}}<a href=""><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>{{/link-to}}
-    {{#link-to 'editions.new' tagName="li"}}<a href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>{{/link-to}}
+  <ul>
+    {{#link-to 'editions.index' class='btn btn-info' tagName="li"}}<a href=""><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>{{/link-to}}
+    {{#link-to 'editions.new' class='btn btn-info' tagName="li"}}<a href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>{{/link-to}}
   </ul>
-</div>
-
 {{outlet}}

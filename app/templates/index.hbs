@@ -1,8 +1,26 @@
+{{#if editions.length}}
+{{#each editions as |edition|}}
+{{#if (is-after edition.fecha comparison precision='second')}}
+
 <h3>{{t 'appName'}}. 
+{{t 'nextEditionIn'}} {{editions.length}}ª: <span class="label label-info">{{edition.name}}</span> {{moment-format edition.fecha}}... {{moment-from-now edition.fecha interval=1000 }}
+</h3>
+      
+{{/if}}
+{{/each}}
 
-<!--h4>{{moment-format nextEdition 'LLLL'}}</h4-->
-{{t 'nextEditionIn'}} {{moment-from-now nextEdition interval=1000 }}</h3>
+{{/if}}
+<!--
 
+ {{#each (each_with_index) editions as |edition|}}
+  <li>{{index}} {{edition.name}}</li>
+ {{/each}}
+
+<p>{{moment-duration nextEdition}}</p>
+<p>{{moment-format nextEdition}}</p>
+<p>is before {{is-before nextEdition comparison precision='second'}}</p>
+<p>is after {{is-after nextEdition comparison precision='second'}}</p>
+-->
 {{#if session.isAuthenticated}}
 
 	<div class='well'>

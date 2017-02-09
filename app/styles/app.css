@@ -1,77 +1,91 @@
-html {
-  //background-color: darkred;
-}
+/*html {
+  background-color: darkred;
+}*/
+
 .btn {
     background-color: transparent;
-    color:white;
+    color: white;
 }
-.rain {width:100%;height: 100px; opacity: 0.8}
-.dropdown-menu
-{
-    color:white;
+
+.rain {
+    width: 100%;
+    height: 100px;
+    opacity: 0.8
+}
+
+.dropdown-menu {
+    color: white;
     background-color: rgba(255, 255, 255, 0.3);
-    //border: none;
-    //border-bottom: 1px solid silver;
+    /*//border: none;
+    //border-bottom: 1px solid silver;*/
     outline: none;
-//    padding: 10px 10px 10px 10px;
+    /*    //    padding: 10px 10px 10px 10px;*/
 }
-.language
-{
+
+.language {
     padding: 0px 0px 15px 15px;
 }
 
 .navbar-default .navbar-brand {
     color: rgba(255, 255, 255, 1);
 }
+
 .navbar-default {
     font-size: 17px;
     background-color: transparent;
     border: none;
-//    border-bottom: 1px solid black;
-//    background: -webkit-linear-gradient(top, rgba(27, 133, 83, 1) 0%, rgba(103, 207, 89, 0.73) 100%);
-//    background: linear-gradient(to bottom, rgba(27, 133, 83, 1) 0%, rgba(103, 207, 89, 0.73) 100%);
+    /*    //    border-bottom: 1px solid black;
+    //    background: -webkit-linear-gradient(top, rgba(27, 133, 83, 1) 0%, rgba(103, 207, 89, 0.73) 100%);
+    //    background: linear-gradient(to bottom, rgba(27, 133, 83, 1) 0%, rgba(103, 207, 89, 0.73) 100%);
+*/
     border-width: 1px;
     border-radius: 4px;
 }
+
 .navbar-default .navbar-nav>li>a {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 255, 255, 0);
 }
+
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
     color: rgba(244, 255, 36, 1);
     background-color: rgba(255, 255, 255, 0.35);
 }
+
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: rgba(244, 255, 36, 1);
     background-color: rgba(230, 230, 230, 1);
 }
+
 .navbar-default .navbar-toggle {
     border-color: #e6e6e6;
 }
+
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
     background-color: #e6e6e6;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #e6e6e6;
 }
+
 .navbar-default .navbar-toggle:hover .icon-bar,
 .navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #67cf59;
 }
 
-
 body {
-  font-family: fantasy;
-  color: white;
-  background-color: darkred;
-  background:radial-gradient(ellipse at left,grey 2%, black 30%, black 90%, darkgrey);
-  background-repeat:no-repeat;
-//  background-position: calc(100% + 240px) calc(100% + 150px);
-  background-attachment: fixed;
+    font-family: fantasy;
+    color: white;
+    background-color: darkred;
+    background: radial-gradient(ellipse at left, grey 2%, black 30%, black 90%, darkgrey);
+    background-repeat: no-repeat;
+    /*//  background-position: calc(100% + 240px) calc(100% + 150px);*/
+    background-attachment: fixed;
 }
 
 .icon-flag {
@@ -79,31 +93,33 @@ body {
     height: 14px;
     width: 20px;
 }
+
 .avatar {
     display: inline-block;
     height: 20px;
     width: 20px;
 }
+
 .well {
-  font-family: verdana;
-  background-color: rgba(0, 139, 139, 0.4);
+    font-family: verdana;
+    background-color: rgba(0, 139, 139, 0.4);
 }
+
 .jumbotron {
-  font-family: verdana;
-  background-color: rgba(0, 139, 139, 0.4);
+    font-family: verdana;
+    background-color: rgba(0, 139, 139, 0.4);
 }
 
 input[type=text],
 input[type=date],
 input[type=time],
 input[type=password],
- input[type=email]
-{
-  color: white;
+input[type=email] {
+    color: white;
     background: transparent;
     border: none;
     border-bottom: 1px dashed silver;
-//    width: 275px;
+    /*  //    width: 275px;*/
     outline: none;
     padding: 0px 0px 0px 0px;
     font-style: italic;
