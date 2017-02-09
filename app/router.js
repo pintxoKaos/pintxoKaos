@@ -13,6 +13,7 @@ Router.map(function() {
   this.authenticatedRoute('editions');
   this.authenticatedRoute('editions', function() {
     this.route('new');
+    this.route('edit', { path: '/:edition_id/edit' });
   });
   this.authenticatedRoute('teams');
   this.authenticatedRoute('pintxos');

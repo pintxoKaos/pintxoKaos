@@ -1,7 +1,10 @@
 <div class="well">
   <ul>
 {{#each model as |edition|}}
-    <li>{{edition.name}} -> {{edition.fecha}}</li>
+    <li>{{edition.name}} -> {{edition.fecha}}
+      {{#link-to 'editions.edit' edition.id class='btn btn-success btn-xs'}}<span class="glyphicon glyphicon-erase" aria-hidden="true"></span>{{/link-to}}
+      <button class="btn btn-danger btn-xs" {{action 'deleteEdition' edition}}><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    </li>
 {{/each}}
   </ul>
 </div>
