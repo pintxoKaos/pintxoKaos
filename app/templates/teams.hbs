@@ -1,3 +1,5 @@
-<h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> 
-<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> {{t 'construction'}}</h1>
+  <ul>
+    {{#link-to 'teams.index' class='btn btn-info' tagName="li"}}<a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> <span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>{{/link-to}}
+    {{#link-to 'teams.new' class='btn btn-info' tagName="li"}}<a href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>{{/link-to}}
+  </ul>
 {{outlet}}

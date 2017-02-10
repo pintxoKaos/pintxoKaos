@@ -14,8 +14,14 @@ Router.map(function() {
         this.route('new');
         this.route('edit', { path: '/:edition_id/edit' });
     });
-    this.authenticatedRoute('teams');
-    this.authenticatedRoute('pintxos');
+    this.authenticatedRoute('teams', function() {
+        this.route('new', { path: '/:edition_id/new' });
+        this.route('edit', { path: '/:team_id/edit' });
+    });
+    this.authenticatedRoute('pintxos', function() {
+        this.route('new', { path: '/:team_id/new' });
+        this.route('edit', { path: '/:pintxo_id/edit' });
+    });
 });
 
 export default Router;

@@ -1,0 +1,23 @@
+<div class="well">
+  
+  <table class="table table-condensed">
+    <tbody>
+{{#each model as |edition|}}
+      <tr>
+        <td>{{moment-format edition.fecha}}</td>
+        <td><span class="label label-info">[{{edition.name}}]</span></td>
+        <td>
+          {{#link-to 'editions.edit' edition.id class='btn btn-success btn-xs'}}
+          <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>{{/link-to}}
+        </td>
+        <td>
+          <button class="btn btn-danger btn-xs" {{action 'deleteEdition' edition}}>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
+          </td>
+      </tr>
+{{/each}}
+    </tbody>
+  </table>
+
+</div>

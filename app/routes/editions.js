@@ -1,25 +1,27 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  firebaseApp: Ember.inject.service(),
+    firebaseApp: Ember.inject.service(),
+    isNotValid: Ember.computed.empty('fecha'),
 
-	beforeModel() {
-/*	if (!this.get('session').isAuthenticated) {
-        this.transitionTo('sign-in');
-		}
+    beforeModel() {
+        /*	if (!this.get('session').isAuthenticated) {
+                this.transitionTo('sign-in');
+        		}
 
-		if (this.get('session')) {
-			this.get('session').fetch('password').catch((error) => {
-				this.set('errorMessage', error);
-        this.transitionTo('sign-in');
-			});
-//			console.log(this.get('firebaseApp').auth().currentUser);
-		}
-*/	},
-	afterModel() {
-/*		if (this.get('session')) {
-			console.log(this.get('firebaseApp').auth().currentUser);
-		}
-    */
-	}
+        		if (this.get('session')) {
+        			this.get('session').fetch('password').catch((error) => {
+        				this.set('errorMessage', error);
+                this.transitionTo('sign-in');
+        			});
+        //			console.log(this.get('firebaseApp').auth().currentUser);
+        		}
+        */
+    },
+    afterModel() {
+        /*		if (this.get('session')) {
+        			console.log(this.get('firebaseApp').auth().currentUser);
+        		}
+            */
+    }
 });
