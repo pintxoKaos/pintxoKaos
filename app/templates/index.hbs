@@ -1,4 +1,15 @@
 {{#if editions.length}}
+<!--
+<ul>
+  {{#each editions as |edition index|}}
+{{#if (eqarray index editions.length)}}
+    <li>Hello, {{edition.fecha}}! You're number {{index}} in line</li>
+{{else}}
+    <li>{{index}} </li>
+{{/if}}
+  {{/each}}
+</ul>
+-->
 {{#each editions as |edition|}}
 {{#if (is-after edition.fecha comparison precision='second')}}
 
