@@ -12,15 +12,30 @@
 -->
 {{#each editions as |edition|}}
 {{#if (is-after edition.fecha comparison precision='second')}}
-
+<!--
 <h3>{{t 'appName'}}. 
 {{t 'nextEditionIn'}} {{editions.length}}ª: <span class="label label-info">{{edition.name}}</span> {{moment-format edition.fecha}}... {{moment-from-now edition.fecha interval=1000 }}
 </h3>
-      
+-->
+<h3>{{t 'appName'}} ... {{moment-from-now edition.fecha interval=1000 }}</h3>
+<h4>{{moment-format edition.fecha}}</h4>
+<h4>{{editions.length}} ediciones</h4>
 {{/if}}
 {{/each}}
 
 {{/if}}
+
+{{#if teams.length}}
+<h4> {{teams.length}} equipos</h4>
+{{/if}}
+{{#if pintxos.length}}
+<h4> {{pintxos.length}} pintxos</h4>
+{{/if}}
+{{#if categories.length}}
+<h4> {{categories.length}} categorías para votar</h4>
+{{/if}}
+
+
 <!--
 
  {{#each (each_with_index) editions as |edition|}}
