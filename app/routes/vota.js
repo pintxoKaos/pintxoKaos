@@ -1,19 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  /*
-    beforeModel() {
-      let votos = this.store.findAll('voto');
-      this.controllerFor('index').set('numVotos', votos.length);
-      this.controllerFor('index').set('votantes', 37);
-      console.log(votos);
-    },
 
-    afterModel() {
-      let votos = this.store.findAll('voto').length;
-      console.log(votos);
-    },
-  */
+  firebaseApp: Ember.inject.service(),
+
+  beforeModel() {
+    console.log("before model controller");
+    if (this.get('session.isAuthenticated')) {
+      const auth = this.get('firebaseApp').auth();
+      const user = auth.currentUser;
+      this.set('currentUser', user);
+      //this.set('myVote.user', user);
+      console.log("user1: " + user.displayName);
+      console.log("user2: " + this.get('currentUser').displayName);
+      console.log("email: " + this.get('currentUser').email);
+      //console.log("voto user: " + this.get('myVote').user);
+      //console.log("voto user: " + this.get('myVote.user').email);
+    }
+  },
 
   model() {
     return Ember.RSVP.hash({
@@ -33,5 +37,10 @@ export default Ember.Route.extend({
     controller.set('users', model.users);
     controller.set('categories', model.categories);
     controller.set('votos', model.votos);
-  }
+  },
+
+  filteredUsers: function() {
+    return this.store.findAll('user').then(results => results.sortBy('team')).property('user.@each');
+  },
+
 });

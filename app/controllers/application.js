@@ -1,5 +1,5 @@
 import Ember from 'ember';
-//import RainyDay from 'rainyday.js';
+//import { RainyDay } from 'rainyday.js';
 
 export default Ember.Controller.extend({
   languages: [{
@@ -73,6 +73,11 @@ export default Ember.Controller.extend({
 
     toggleMenu() {
       this.toggleProperty('isMenuOpened');
+    },
+    toggleMenuToClose() {
+      if (this.get('isMenuOpened')) {
+        this.toggleProperty('isMenuOpened');
+      }
     },
 
     toggleDropdown() {

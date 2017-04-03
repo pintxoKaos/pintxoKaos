@@ -22,11 +22,6 @@ module.exports = function(environment) {
     },
 
     firebase: {
-      apiKey: "AIzaSyCKadPPWlN_XsHWvR-lsiLM7Dxge6NpUyU",
-      authDomain: "pintxokaos-bd3cf.firebaseapp.com",
-      databaseURL: "https://pintxokaos-bd3cf.firebaseio.com",
-      storageBucket: "pintxokaos-bd3cf.appspot.com",
-      messagingSenderId: "453741089631"
 
     },
 

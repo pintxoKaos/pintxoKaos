@@ -1,0 +1,79 @@
+	<div class='well'>
+
+	
+		<h3><span class="label label-info"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="badge" aria-hidden="true">{{users.length}}</span></span>
+		<span class="label label-info"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span><span class="badge" aria-hidden="true">{{teams.length}}</span></span></h3>
+<ul>
+		{{#each teams as |team|}}
+<li><span class="label label-danger">{{team.hour}}</span><span class="label label-success">{{team.name}}</span> <span class="label label-warning">{{team.pintxo.name}}</span></li>
+		{{#each team.user as |user|}}
+<span class="label label-info">{{#if user.isAdmin}}<span class="glyphicon glyphicon-star" aria-hidden="true" title="administrador"> </span>{{/if}}{{user.displayName}}</span>
+		{{/each}}
+		{{/each}}
+</ul>
+{{#if session.isAuthenticated}}
+{{#if haVotado}}
+{{else}}
+<button class='btn btn-danger' {{action 'vota'}} title="vota">
+<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+</button>
+{{/if}}
+<h3>
+{{#if session.currentUser.displayName}}
+	{{session.currentUser.displayName}} 
+{{else}}
+	{{session.currentUser.email}} 
+{{/if}}
+{{#if haVotado}}
+ya ha votado.
+{{else}}
+ vota dando al botón pliki (<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>) cuando hayas votado en todas las categorías.
+{{/if}}
+</h3>
+
+{{#if haVotado}}
+{{else}}
+
+{{#each editions as |edition|}}
+	<span class="label label-info">{{t 'appName'}}</span> <span class="label label-warning">{{edition.name}}</span>
+{{#if categories.length}}
+{{#each categories as |category|}}
+	<div class='well'>
+<h4><span class="label label-info">{{category.name}}</span></h4>
+
+<p>{{category.description}}</p>
+<select onchange={{action "votoParcial" value="target.value"}} class='form-control'>
+{{#each teams as |team|}}
+{{#if team.pintxo}}
+<option value="{{session.currentUser.uid}}.{{category.id}}.{{team.name}}"> {{team.name}} ({{team.pintxo.name}})</option>
+{{else}}
+<option value="" selected="true"> </option>
+{{/if}}
+{{/each}}
+</select>
+	</div>
+
+{{/each}}
+
+
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if haVotado}}
+{{else}}
+<button class='btn btn-danger' {{action 'vota'}} title="vota">
+<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
+</span>
+</button>
+{{/if}}
+{{else}}
+{{/if}}
+
+
+
+
+
+
+
+</div>

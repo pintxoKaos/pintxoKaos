@@ -2,7 +2,8 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  /*edition: DS.belongsTo('edition')
-    ,
-      user: DS.hasMany('user')*/
+  hour: DS.attr('string'),
+  edition: DS.attr('string'),
+  pintxo: DS.belongsTo('pintxo'),
+  user: DS.hasMany('user')
 });

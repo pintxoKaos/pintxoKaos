@@ -11,7 +11,8 @@ Router.map(function() {
   this.route('sign-in');
   this.route('teams');
   this.route('pintxos');
-  this.authenticatedRoute('welcome');
+  this.route('welcome');
+  this.authenticatedRoute('vota');
 
 
   /*

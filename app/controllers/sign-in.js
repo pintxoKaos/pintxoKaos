@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
       }).then(() => {
         controller.set('email', null);
         controller.set('password', null);
-        controller.transitionToRoute('welcome');
+        controller.transitionToRoute('index');
         //console.log(user.currentUser);
         //const currentUser = user.currentUser;
         //console.log(currentUser);
