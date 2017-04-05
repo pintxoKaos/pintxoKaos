@@ -2,29 +2,35 @@
 
 
 {{#if session.isAuthenticated}}
-
-{{#if votos.length}}
 	<div class='well'>
-<p>
-{{#if session.currentUser.displayName}}
-	{{session.currentUser.displayName}} 
-{{else}}
-	{{session.currentUser.email}} 
-{{/if}}
+    <h4>
 
-{{#if haVotado}}
- ha votado satisfactoriamente
-{{else}}
- todavía no ha votado
-{{/if}}
-</p>
 
-{{#if hanVotado}}
-<p><h3><span class="label label-success" aria-hidden="true"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span><span class="badge" aria-hidden="true">{{hanVotado.length}}</span></span></h3> 
-{{#each hanVotado as |votado|}}
-<span class="label label-success" aria-hidden="true">{{votado.displayName}}</span> 
-{{/each}}</p>
-{{/if}}
+      {{#if session.currentUser.displayName}}
+        {{session.currentUser.displayName}} 
+      {{else}}
+        {{session.currentUser.email}} 
+      {{/if}}
+
+
+      {{#if haVotado}}
+      ha votado satisfactoriamente. Ver 
+              {{#link-to 'scrutiny'}}
+      <button class="btn btn-danger active" type="button">
+                <span class="glyphicon glyphicon-blackboard" aria-hidden="true"><span class="glyphicon glyphicon-stats" aria-hidden="true"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></span></span>
+      </button>
+              {{/link-to}}
+      los resultados
+      {{else}}
+      todavía no ha votado
+              {{#link-to 'vota'}}
+      <button class="btn btn-danger active" type="button">
+                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      </button>
+              {{/link-to}}
+      {{/if}}
+
+    </h4>
 
     <div class="progress">
       <div class="progress-bar progress-bar-info" role="progressbar"
@@ -35,79 +41,48 @@
       <span class="label-danger">{{porcentaje}}% {{votos.length}} / {{users.length}}</span>
     </div>
 
-{{#if noHanVotado}}
-<p><h3><span class="label label-danger" aria-hidden="true"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span><span class="badge" aria-hidden="true">{{noHanVotado.length}}</span></span></h3>
-{{#each noHanVotado as |votado|}}
-<span class="label label-danger" aria-hidden="true">{{votado.displayName}}</span> 
-{{/each}}</p>
-{{/if}}
+  </div>
+{{else}}
+	<!--section class="content wrapper flexy-item">
+		<header class="accesible-hide">
+			<h2>{{t 'appName'}}</h2>
+		</header>
+	</section-->
 
-
-{{#if isAdmin}}
-
-
-    <h3><span class="label label-success" aria-hidden="true">Mejor Pintxo</span></h3>
-<ol>
-{{#each cat as |team|}}
-{{#if team.total}}
-  <li><span class="badge" aria-hidden="true">{{team.total}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-default" aria-hidden="true">({{team.cat1}} x5) + ({{team.cat2}} x3) + {{team.cat3}}</span></li>
-{{/if}}
-{{/each}}
-</ol>
-    <h3><span class="label label-success" aria-hidden="true">Pintxo más original</span></h3>
-<ol>
-{{#each cat4 as |team|}}
-{{#if team.cat4Original}}
-  <li><span class="badge" aria-hidden="true">{{team.cat4Original}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
-{{/if}}
-{{/each}}
-</ol>
-    <h3><span class="label label-success" aria-hidden="true">Emplatado</span></h3>
-<ol>
-{{#each cat5 as |team|}}
-{{#if team.cat5Emplatado}}
-  <li><span class="badge" aria-hidden="true">{{team.cat5Emplatado}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
-{{/if}}
-{{/each}}
-</ol>
-    <h3><span class="label label-success" aria-hidden="true">Nombre más original</span></h3>
-<ol>
-{{#each cat6 as |team|}}
-{{#if team.cat6Nombre}}
-  <li><span class="badge" aria-hidden="true">{{team.cat6Nombre}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
-{{/if}}
-{{/each}}
-</ol>
-    <h3><span class="label label-success" aria-hidden="true">Presentación + Alegato</span></h3>
-<ol>
-{{#each cat7 as |team|}}
-{{#if team.cat7Alegato}}
-  <li><span class="badge" aria-hidden="true">{{team.cat7Alegato}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
-{{/if}}
-{{/each}}
-</ol>
-
-{{/if}}
-
+	<div class='well'>
+	<div class='jumbotron'>
+  <h6>Fundido en negro......</h6>
+  <h5>Cuerdas en <i>sotto voce</i>......</h5>
+  <h6>Murmullo de gente de fondo......</h6>
+  <h4>Violines <i>crescendo</i>......</h4>
+  <h4>Sonido de útiles de cocina......</h4>
+  <h4>Entran las trompas......</h4>
+  <h3>Las maderas atacan la nota en <i>sforzando</i>......</h3>
+  <h5>se escucha: </h5>
+  <h2>”Tenemos que emplatar ya, ¡tenemos que emplatar ya!”......</h2>
+  <h2>ENTRAN TODOS LOS METALES EN UN GRAN ACORDE..................</h2>
+  <h5>y se lee:</h5>
+  <h1><span class="label-success">PINTXOKAOS</span></h1><h1><span class="label-danger">EPISODE IV</span></h1>
+	</div>
+  <p>{{t 'hiAreIn'}} {{t 'appName'}}</p>
+	<p>En esta edición hay que {{#link-to 'sign-up' class='btn btn-default'}}registrarse <span class="glyphicon glyphicon-off" aria-hidden="true"></span>{{/link-to}} con un correo electrónico y una clave. </p>
+	<p>{{t 'register3'}}. </p>
+	<p>Si ya estás registrado necesitarás {{#link-to 'sign-in' class='btn btn-default'}}logarte <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>{{/link-to}} para poder votar, elegir un equipo, un pintxo... etc. </p>
+	<p>{{t 'siCond'}} {{moment-from-now (now) interval=1000}} {{t 'endCond'}}. {{t 'askHelp'}}.</p>
+	<p>{{t 'gracias'}}</p>
 	</div>
 {{/if}}
-{{/if}}
 
+
+
+
+
+<!--
 	<div class='well'>
 {{#if editions.length}}
 
-<!--
-<ul>
-  {{#each editions as |edition index|}}
-{{#if (eqarray index editions.length)}}
-    <li>Hello, {{edition.fecha}}! You're number {{index}} in line</li>
-{{else}}
-    <li>{{index}} </li>
-{{/if}}
-  {{/each}}
-</ul>
--->
-<!--
+
+
 {{/if}}
 <button class="btn btn-success" type="button">
   Ediciones <span class="badge">{{editions.length}}</span>
@@ -132,31 +107,17 @@
 <p>{{moment-format nextEdition}}</p>
 <p>is before {{is-before nextEdition comparison precision='second'}}</p>
 <p>is after {{is-after nextEdition comparison precision='second'}}</p>
--->
+
 {{#if session.isAuthenticated}}
-{{#if haVotado}}
-{{else}}
-	<div class='well'>
-				{{#link-to 'vota'}}
-<button class="btn btn-danger active" type="button">
-					<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-</button>
-				{{/link-to}}
-  </div>
-{{/if}}
-<!--
+
+
 	<p>{{t 'chooseTeam'}} {{#link-to 'teams' class='btn btn-default'}}<span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-flag" aria-hidden="true"></span>{{/link-to}}</p>
 	<p>{{t 'choosePintxo'}} {{#link-to 'pintxos' class='btn btn-default'}}<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>{{/link-to}}</p>
-	-->
 	
  {{else}}
-	<div class='well'>
-  <p>{{t 'hiAreIn'}} {{t 'appName'}}</p>
-	<p>{{t 'register1'}}. 
-	{{#link-to 'sign-up' class='btn btn-default'}}{{t 'register2'}} <span class="glyphicon glyphicon-off" aria-hidden="true"></span>{{/link-to}}</p>
-	<p>{{t 'register3'}}. </p>
-	<p>{{t 'siCond'}} {{moment-from-now (now) interval=1000}} {{t 'endCond'}}. {{t 'askHelp'}}.</p>
-	<p>{{t 'gracias'}}</p>
-	</div>
+
 {{/if}}
 	</div>
+	-->
+
+  {{outlet}}

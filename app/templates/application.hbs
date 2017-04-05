@@ -39,18 +39,42 @@
 	    <div class="collapse navbar-collapse {{if isMenuOpened 'in'}}" id="navbar">
 
 			<ul class="nav navbar-nav">
-				<li {{action 'toggleMenuToClose'}}>
+				<li {{action 'toggleMenuToClose'}} title="{{t 'appName'}}">
 				{{#link-to 'index'}}
 					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 				{{/link-to}}
 				</li>
+				<li {{action 'toggleMenuToClose'}} title="Programa del concurso">
+				{{#link-to 'program'}}
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+				{{/link-to}}
+				</li>
+				<li {{action 'toggleMenuToClose'}} title="Orden de los participantes">
+				{{#link-to 'orden'}}
+					<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+				{{/link-to}}
+				</li>
+				<li {{action 'toggleMenuToClose'}} title="Bases del concurso">
+				{{#link-to 'bases'}}
+					<span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+				{{/link-to}}
+				</li>						
+				<li {{action 'toggleMenuToClose'}} title="Imprime una papeleta">
+				{{#link-to 'votaPapel'}}
+					<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+				{{/link-to}}
+				</li>						
 {{#if session.isAuthenticated}}
-				<li {{action 'toggleMenuToClose'}}>
+				<li {{action 'toggleMenuToClose'}} title="VOTA!!!">>
 				{{#link-to 'vota'}}
 					<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
 				{{/link-to}}
 				</li>
-				<!--li>
+				<li {{action 'toggleMenuToClose'}} title="Escrutinio">>
+				{{#link-to 'scrutiny'}}
+					<span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
+				{{/link-to}}
+				</li>				<!--li>
 				{{#link-to 'editions'}}
 					<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 				{{/link-to}}
@@ -71,7 +95,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 {{#if session.isAuthenticated}}
-				<li {{action 'toggleMenuToClose'}}>
+				<li {{action 'toggleMenuToClose'}} title="Tus datos">
 					{{#link-to 'welcome'}}
 {{#if session.currentUser.photoURL}}
 						<img class="avatar" src='{{session.currentUser.photoURL}}' />
@@ -85,7 +109,7 @@
 				    {{/link-to}}
 				</li>
 {{else}}
-				<li {{action 'toggleMenuToClose'}}>
+				<li {{action 'toggleMenuToClose'}} title="Identifícate">
 					{{#link-to 'sign-in'}}
 						<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 					{{/link-to}}

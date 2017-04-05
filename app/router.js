@@ -29,6 +29,11 @@ Router.map(function() {
       this.route('edit', { path: '/:pintxo_id/edit' });
     });
   */
+  this.authenticatedRoute('scrutiny');
+  this.route('program');
+  this.route('orden');
+  this.route('bases');
+  this.route('votaPapel');
 });
 
 export default Router;

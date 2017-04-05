@@ -1,0 +1,32 @@
+
+<h3>ORDEN DE PARTICIPACIÓN</h3>
+<div class='well'>
+<ul style="list-style-type: none;">
+	{{#each teams as |team|}}
+    {{#if team.hour}}
+<li>
+	<span class="glyphicon glyphicon-time" aria-hidden="true" title="hora"> </span>
+	<span class="label-success">
+		{{team.hour}}
+	</span>
+	&nbsp;
+	<span class="glyphicon glyphicon-flag" aria-hidden="true" title="equipo"> </span>
+	<span class="label-default">
+		{{team.name}} 
+	</span>
+	<br>
+	<span class="glyphicon glyphicon-cutlery" aria-hidden="true" title="pintxo"> </span>
+	<span class="label-warning">
+			{{team.pintxo.name}}
+	</span>
+</li>
+      <ul style="list-style-type: none;">
+		  {{#each team.user as |user|}}
+<li><span class="glyphicon glyphicon-user" aria-hidden="true" title="participante"> </span>&nbsp;{{#if user.isAdmin}}<span class="glyphicon glyphicon-star" aria-hidden="true" title="administrador"> </span>{{/if}}{{user.displayName}}</li>
+		  {{/each}}
+      </ul>
+    {{/if}}
+	{{/each}}
+</ul>
+</div>
+{{outlet}}

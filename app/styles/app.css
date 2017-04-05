@@ -114,6 +114,7 @@ input[type=text],
 input[type=date],
 input[type=time],
 input[type=password],
+input[type=radio],
 input[type=email] {
   color: white;
   background: transparent;
@@ -123,4 +124,20 @@ input[type=email] {
   outline: none;
   padding: 0px 0px 0px 0px;
   font-style: italic;
+}
+
+.customElement {
+  color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed silver;
+  /*  //    width: 275px;*/
+  outline: none;
+  padding: 0px 0px 0px 0px;
+  font-style: italic;
+}
+
+.printable {
+  font-size: 2pt;
+  display: none;
 }

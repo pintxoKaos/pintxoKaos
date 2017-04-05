@@ -1,0 +1,81 @@
+{{#if session.isAuthenticated}}
+
+{{#if votos.length}}
+	<div class='well'>
+
+{{#if hanVotado}}
+<p><h3><span class="label label-success" aria-hidden="true"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span><span class="badge" aria-hidden="true">{{hanVotado.length}}</span></span></h3> 
+{{#each hanVotado as |votado|}}
+<span class="label label-success" aria-hidden="true">{{votado.displayName}}</span> 
+{{/each}}</p>
+{{/if}}
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-info" role="progressbar"
+        aria-valuenow="{{votos.length}}" aria-valuemin="0" aria-valuemax="{{users.length}}"
+        style="width: {{porcentaje}}%;">
+        <span class="label-success">{{porcentaje}}% {{votos.length}} / {{users.length}}</span>
+      </div>
+      <span class="label-danger">{{porcentaje}}% {{votos.length}} / {{users.length}}</span>
+    </div>
+
+{{#if noHanVotado}}
+<p><h3><span class="label label-danger" aria-hidden="true"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span><span class="badge" aria-hidden="true">{{noHanVotado.length}}</span></span></h3>
+{{#each noHanVotado as |votado|}}
+<span class="label label-danger" aria-hidden="true">{{votado.displayName}}</span> 
+{{/each}}</p>
+{{/if}}
+
+
+{{#if isAdmin}}
+
+
+    <h3><span class="label label-success" aria-hidden="true">Mejor Pintxo</span></h3>
+<ol>
+{{#each cat as |team|}}
+{{#if team.total}}
+  <li><span class="badge" aria-hidden="true">{{team.total}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-default" aria-hidden="true">({{team.cat1}} x5) + ({{team.cat2}} x3) + {{team.cat3}}</span></li>
+{{/if}}
+{{/each}}
+</ol>
+    <h3><span class="label label-success" aria-hidden="true">Pintxo más original</span></h3>
+<ol>
+{{#each cat4 as |team|}}
+{{#if team.cat4Original}}
+  <li><span class="badge" aria-hidden="true">{{team.cat4Original}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
+{{/if}}
+{{/each}}
+</ol>
+    <h3><span class="label label-success" aria-hidden="true">Emplatado</span></h3>
+<ol>
+{{#each cat5 as |team|}}
+{{#if team.cat5Emplatado}}
+  <li><span class="badge" aria-hidden="true">{{team.cat5Emplatado}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
+{{/if}}
+{{/each}}
+</ol>
+    <h3><span class="label label-success" aria-hidden="true">Nombre más original</span></h3>
+<ol>
+{{#each cat6 as |team|}}
+{{#if team.cat6Nombre}}
+  <li><span class="badge" aria-hidden="true">{{team.cat6Nombre}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
+{{/if}}
+{{/each}}
+</ol>
+    <h3><span class="label label-success" aria-hidden="true">Presentación + Alegato</span></h3>
+<ol>
+{{#each cat7 as |team|}}
+{{#if team.cat7Alegato}}
+  <li><span class="badge" aria-hidden="true">{{team.cat7Alegato}}</span> <span class="label label-info" aria-hidden="true">{{team.name}}</span> <span class="label label-warning" aria-hidden="true">{{team.pintxo.name}}</span></li>
+{{/if}}
+{{/each}}
+</ol>
+
+{{/if}}
+
+	</div>
+{{/if}}
+{{/if}}
+
+
+{{outlet}}

@@ -1,0 +1,48 @@
+<div id='papeleta' class="printable">
+
+{{#each editions as |edition|}}
+
+  <span class="label-info">{{t 'appName'}}</span> <span class="label-warning">{{edition.name}}</span>
+  <div class="input-group input-group">
+    <span class="input-group-addon customElement" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon1">
+    <span class="input-group-addon customElement" id="sizing-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon1">
+  </div>
+
+
+<div class="row">
+{{#if categories.length}}
+  {{#each categories as |category|}}
+<div class="col-xs-6">
+  <span class="label-info">{{category.name}}</span> {{category.description}}
+
+    {{#each teams as |team|}}
+      {{#if team.pintxo}}
+<input type="radio" aria-label="{{team.name}} ({{team.pintxo.name}})" name="{{category.name}}">
+{{team.name}} ({{team.pintxo.name}})
+<br>
+      {{/if}}
+    {{/each}}
+</div>
+
+  {{/each}}
+
+{{/if}}
+</div>
+
+{{/each}}
+
+</div>
+
+<div class="well">
+  <p>La PICA recuerda que el voto <strong>NO</strong> puede ser anónimo, debes informar nombre y correo. Si has cocinado, <strong>NO</strong> puedes votar a tu equipo en ninguna categoría. Dale 
+<button class='btn btn-success' {{action 'imprime'}} title="imprime papeleta">
+<span class="glyphicon glyphicon-print" aria-hidden="true">
+</span>
+</button>
+ para imprimir papeletas (que tendrá que contar a mano y digitalizar El Gran Macorra).
+</p>
+</div>
+
+{{outlet}}
